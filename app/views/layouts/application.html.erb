@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BR Dev</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="logo-container">
+    <div id="logo">Basmati Raas</div>
+  </div>
+<div id="main" class="element">
+	<nav>
+    <ul id="navigation">
+	    <li><%= link_to "Home", :action => "" %></li>
+	    <li><%= link_to "Members", :action => "members" %></li>
+	    <li><%= link_to "Awards", :action => "awards" %></li>
+			<li><%= link_to "History", :action => "history" %></li>
+			<li><%= link_to "Sponsorship", :action => "sponsorship" %></li>
+    </ul>
+  </nav>
+	<%= yield %>
+</div>
+
+<div id="footer">
+	<p> Basmati Raas 2012-2013 </p>
+</footer>
+</body>
+</html>

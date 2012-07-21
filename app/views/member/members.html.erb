@@ -1,0 +1,11 @@
+
+<% @users.each do |u| %>
+<div class="one-member">
+	<div class="left"> <%= image_tag("rkp.jpg", :class => "member")%></div>
+	<div class="right">
+		<p>Name: <strong><%= u.name%></strong></p>
+		<p>Year: <strong><%= u.year %></strong></p>
+		<p>Bio: <strong><%= u.bio %></strong></p>
+	</div>
+</div>
+<% end %>
