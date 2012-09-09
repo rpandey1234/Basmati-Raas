@@ -16,10 +16,14 @@
 	    <li><%= link_to "Home", :action => "" %></li>
 	    <li><%= link_to "Members", :action => "members" %></li>
 	    <li><%= link_to "Awards", :action => "awards" %></li>
-			<li><%= link_to "History", :action => "history" %></li>
-			<li><%= link_to "Sponsorship", :action => "sponsorship" %></li>
+		<li><%= link_to "History", :action => "history" %></li>
+		<li><%= link_to "Sponsorship", :action => "sponsorship" %></li>
+		<li><%= link_to "Login", :action => "login" %></li>
     </ul>
   </nav>
+   <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}", :class => "flash" %>
+  <% end %>
 	<%= yield %>
 </div>
 

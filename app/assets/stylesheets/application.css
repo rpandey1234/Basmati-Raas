@@ -125,12 +125,11 @@ a {
 
 .left {
   float: left;
-  max-width: 370px;
-  clear: both;
+  max-width: 270px;
 }
 
 .right {
-  margin-left: 400px;
+  margin-left: 300px;
 }
 
 .center {
@@ -144,8 +143,29 @@ a {
   max-height: 300px;
 }
 
-.one-member {
+.overflowAuto {
   border: red solid 1px;
   overflow: auto;
+}
 
+#notices {
+  background-color: #990100;
+  color: #D8D8D5;
+  margin: 10px;
+  width: 250px;
+  min-height: 
+}
+
+#flash_alert {
+  color: red;
+}
+
+#flash_notice {
+  color: green;
+}
+
+.flash {
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
 }

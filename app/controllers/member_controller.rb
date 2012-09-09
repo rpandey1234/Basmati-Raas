@@ -17,4 +17,8 @@ class MemberController < ApplicationController
 
 	def sponsorship
 	end
+
+	def login
+		
+	end
 end
