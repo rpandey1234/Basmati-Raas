@@ -1,1 +1,20 @@
-All the users!
+<h3>Members 2011-12</h3>
+
+<table class="table table-striped">
+	<% @users.each do |u| %>
+	<tr>
+		<td class="small"><%= image_tag(u.img_file, :class => "member")%></td>
+		<td class="large">
+			<p>Name: <strong>
+			<% if session[:username] %>
+				<%= link_to u.full_name, :action => "edit", :id => u.id %>
+			<% else %>
+				<%= u.full_name %>
+			<% end %>
+			</strong></p>
+			<p>Year: <strong><%= u.year %></strong></p>
+			<p>Bio: <strong><%= u.bio %></strong></p>
+		</td>
+	</tr>
+	<% end %>
+</table>

@@ -1,0 +1,68 @@
+
+
+<table class="table table-striped">
+<tr>
+	<td>
+	<h3> Upload a new photo</h3>
+	<%= form_for(Photo.new, :url => {:controller => :photos, :action => :create}, :html => {:multipart => true}) do |form| %>
+		<div><%= form.file_field :image %></div>
+		<div class="hidden"><input type="number" name="user_id" value="<%= @user.id %>" /></div><br \>
+		<div><%= submit_tag "Upload Photo" %></div>
+	<% end %>
+
+	<h3>Current Pictures</h3>
+	<% if @photos.empty? %>
+		<p>This user has no photos</p>
+	<% else %>
+		<% @photos.each do |p| %>
+			<%= image_tag(p.filename, :size => "100x60", :alt => "Edit Entry") %>
+		<% end %>
+	<% end %>
+	</td>
+
+	<td>
+	<%= form_for(@user) do |f| %>
+		<fieldset>
+			<legend>Edit profile for <%= @user.full_name %>:</legend>
+		  <div class="control-group">
+		  	<%= f.label :first_name, :class => "control-label" %>
+		  	<div class="controls">
+		  		<%= f.text_field :first_name, :class => "text_field" %>
+		  	</div>
+		  </div>
+
+		  <div class="control-group">
+		  	<%= f.label :last_name, :class => "control-label" %>
+		  	<div class="controls">
+		  		<%= f.text_field :last_name, :class => "text_field" %>
+		  	</div>
+		  </div>
+		  
+		  <div class="control-group">
+		  	<%= f.label :year, :class => "control-label" %>
+		  	<div class="controls">
+		  		<%= f.text_field :year, :class => "text_field" %>
+		  	</div>
+		  </div>
+		  
+		  <div class="control-group">
+		  	<%= f.label :bio, :class => "control-label" %>
+		  	<div class="controls">
+		  		<%= f.text_area :bio, :class => "text_area small" %>
+		  	</div>
+		  </div>
+
+		  <div class="form-actions">
+		  	<%= f.submit :class => "btn btn-primary" %>
+		  	<%= link_to "Cancel", users_path, :class => "btn" %>
+		  </div>
+
+		</fieldset>
+
+	</td>
+</tr>
+</table>
+
+	
+<% end %>
+<%= link_to "Delete this member", @user, :method => :delete, :confirm => "Are you sure?", :class => "btn btn-mini btn-danger" %>

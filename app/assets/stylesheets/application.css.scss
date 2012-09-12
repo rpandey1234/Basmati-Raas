@@ -1,0 +1,174 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require_self
+*= require_tree .
+*/
+body {
+  margin: 30px 0 30px 0;
+  padding: 0;
+  background-color: #EEEEEE;
+  color: #333;
+  line-height: 150%;
+  font-size: 16px;
+  font-family: 'Bitter', 'Georgia', 'Arial';
+  background-image: url("dark_wall.png");
+}
+
+.clear {
+  clear: both;
+}
+
+.element {
+  width: 970px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #CCCCCC;
+  box-shadow: 0px 0px 3px 1px #CCCCCC;
+  border-radius: 4px;
+  padding: 30px;
+  background-color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+#logo-container {
+  width: 1010px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  font-family: 'Oxygen', 'Helvetica', 'Arial';
+  color: #E95C33;
+  text-shadow: 1px 1px 1px #FFFFFF;
+}
+
+#logo {
+  font-size: 50px;
+  display: inline;
+}
+
+#footer {
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+}
+
+#sublogo {
+  font-size: 20px;        
+}
+
+h1, h2 {
+  margin: 0 0 20px 0;
+  font-weight: normal;
+  font-family: 'Oxygen', 'Helvetica', 'Arial';
+}
+
+p {
+  text-indent: 30px;
+  line-height: 175%;
+}
+
+a {
+  color: #41B7D8;
+  text-decoration: none;
+}
+
+#header-left {
+  float: left;
+  width: 400px;
+}
+
+#header-right {
+  margin-left: 410px;
+  font-size: 14px;
+}
+
+#navigation {
+  list-style: none;
+  margin: 0 0 40px 0;
+  padding: 0;
+}
+
+#navigation li {
+  margin-right: 20px;
+  font-size: 24px;
+  display: inline;
+  font-family: 'Oxygen', 'Helvetica', 'Arial';
+}
+
+#navigation li:hover {
+  border-bottom: 3px solid #E95C33;
+}
+
+#navigation li.active {
+  border-bottom: 3px solid #E95C33;
+}
+
+#sub-nav {
+  list-style: none;
+  margin: 0 0 40px 0;
+  padding: 0;
+}
+
+#sub-nav button {
+  margin-right: 10px;
+  font-size: 14px;
+  display: inline;
+  font-family: 'Oxygen', 'Helvetica', 'Arial';
+}
+
+.left {
+  float: left;
+  max-width: 270px;
+}
+
+.right {
+  margin-left: 300px;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.member {
+  padding: 20px;
+  max-width: 200px;
+  max-height: 300px;
+}
+
+.overflowAuto {
+  overflow: auto;
+}
+
+#notices {
+  background-color: #990100;
+  color: #D8D8D5;
+  margin: 10px;
+  width: 250px;
+  min-height: 40px; 
+}
+
+#flash_alert {
+  color: red;
+}
+
+#flash_notice {
+  color: green;
+}
+
+.flash {
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.padding-top {
+  padding-top: 50px;
+}

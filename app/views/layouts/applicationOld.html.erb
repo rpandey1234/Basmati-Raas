@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BR Dev</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="logo-container">
+    <div id="logo">Basmati Raas</div>
+  </div>
+<div id="main" class="element">
+	<nav>
+    <ul id="navigation">
+	    <li><%= link_to "Home", :controller => "static", :action => "" %></li>
+	    <li><%= link_to "Members", :controller => "users" %></li>
+	    <li><%= link_to "Awards", :controller => "static", :action => "awards" %></li>
+		<li><%= link_to "History", :controller => "static", :action => "history" %></li>
+		<li><%= link_to "Sponsorship", :controller => "static", :action => "sponsorship" %></li>
+    <% if session[:user_id] %>
+      <li>Welcome, <%= session[:user_id] %></li>  
+    <% else %>  
+      <li><%= link_to "Login", :controller => "static", :action => "login" %></li>
+    <% end %>
+    </ul>
+  </nav>
+   <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}", :class => "flash" %>
+  <% end %>
+	<%= yield %>
+</div>
+
+<div id="footer">
+	<p> Basmati Raas 2012-2013 </p>
+</footer>
+</body>
+</html>

@@ -1,4 +1,12 @@
 BasmatiRaas::Application.routes.draw do
+  get "static/index"
+
+  get "static/history"
+
+  get "static/awards"
+
+  get "static/sponsorship"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -12,7 +20,9 @@ BasmatiRaas::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :users
+  resources :users do
+    resources :photos
+  end
 
   # Sample resource route with options:
   #   resources :products do
@@ -51,7 +61,7 @@ BasmatiRaas::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
 
-  root :to => "member#index"
+  root :to => "static#index"
 
   # See how all your routes lay out with "rake routes"
 

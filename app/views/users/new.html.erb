@@ -1,0 +1,9 @@
+<h3>Create a new member:</h3>
+
+<%= form_for(User.new) do |f| %>
+	First name: <%= f.text_field :first_name %><br />
+  Last name: <%= f.text_field :last_name %><br />
+  Year: <%= f.text_field :year %><br />
+  Biography: <%= f.text_area :bio %><br />
+  <%= f.submit %>
+<% end %>

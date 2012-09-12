@@ -153,7 +153,6 @@ a {
   color: #D8D8D5;
   margin: 10px;
   width: 250px;
-  min-height: 
 }
 
 #flash_alert {

@@ -1,0 +1,38 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="row">
+	<div class="span2 offset5"><%= image_tag("BRlogo.jpg", :size => "200x200") %></div>
+</div>
+
+<div class="row padding-top">
+  <div class="span3">
+	<%= image_tag("gwa2011.jpg", :size => "500x500")%>
+  	<div class="padding-top"> <p>We are SO excited for the upcoming school year! Tryouts for the 2012-13 team will take place in early October. We'll post the exact date and location here as we get closer. Let us know if you have any questions or just want to talk! </p>
+  	<p>~ <%= mail_to "apatro@stanford.edu","Ankita "%> and <%= mail_to "shilpas.dance@gmail.com", "Shilpa"%>, captains</p>
+  	</div>
+  </div>
+  <div class="span5"><p><span class="special">Welcome to Basmati Raas.</span> We are a co-ed, 16-member Indian dance team that competes across the country in a form of dance known as Garba Raas.  With an unforgettable routine, we combine powerful moves, intricate costumes, and a colorful storyline. Our performances have taken us to competitions and shows in New York City, Miami, Ann Arbor, New Jersey, and Los Angeles. With the contagious laughter and serious work ethic that grace our every practice, we dare you to try and not fall in love with Basmati Raas.</p>
+   	<ul>
+  		<li><%= link_to "Our team", :controller => "users" %> </li>
+  		<li>Interested in <%= link_to "sponsoring or getting in touch?", :action => "sponsorship" %></li>
+  		<li><%= link_to "Awards", :action => "awards" %></li>
+  	</ul>
+  </div>
+  <div class="span3"><div class="fb-like-box" data-href="https://www.facebook.com/basmatiraas" data-width="292" data-show-faces="true" data-stream="true" data-header="true"></div></div>
+</div>
+
+<div class="row padding-top">
+  <div class="span3 offset1">Contributor: <p>Students planning on moving in the future can click <%= link_to "here", "http://www.vanlines.com/", :target => "_blank"%> to compare moving quotes from top moving companies in Stanford, California.</p>
+	</div>
+  <div class="span3">Contributor: <p>Stanford dancers that are thinking about enhancing their eyesight will want to talk to <%= link_to "Stephen Slade MD", "http://stephenslade-md.com/", :target => "_blank"%> to gain knowledge about LASIK eye surgery and learn how it can improve eyesight.</p>
+  </div>
+  <div class="span3">Contributor: <p>Students who are physically challenged or have an accident can still get around with <%= link_to "mobility scooters", "http://www.allmobilityscooters.com/", :target => "_blank"%>.</p>
+  </div>
+</div>

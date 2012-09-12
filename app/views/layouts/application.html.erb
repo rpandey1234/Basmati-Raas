@@ -1,34 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BR Dev</title>
+  <title>Basmati Raas</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<div id="logo-container">
-    <div id="logo">Basmati Raas</div>
+<div class="container">
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to "Basmati Raas", { :controller => "static"}, :class=> "brand" %>
+        <div class="nav-collapse collapse">
+
+        <p class="navbar-text pull-right">
+          <% if session[:username] %>
+            Welcome, <%= session[:username] %>. <%= link_to "Sign out", :controller => "static", :action => "logout" %>
+          <% else %>  
+            <%= link_to "Login", :controller => "static", :action => "login" %>
+          <% end %>
+        </p>
+        <ul class="nav">
+          <li><%= link_to "Members", :controller => "users" %></li>
+          <li><%= link_to "Awards", :controller => "static", :action => "awards" %></li>
+      		<li><%= link_to "History", :controller => "static", :action => "history" %></li>
+      		<li><%= link_to "Sponsorship", :controller => "static", :action => "sponsorship" %></li>
+        </ul>
+        </div>
+      </div>
+    </div>
   </div>
-<div id="main" class="element">
-	<nav>
-    <ul id="navigation">
-	    <li><%= link_to "Home", :action => "" %></li>
-	    <li><%= link_to "Members", :action => "members" %></li>
-	    <li><%= link_to "Awards", :action => "awards" %></li>
-		<li><%= link_to "History", :action => "history" %></li>
-		<li><%= link_to "Sponsorship", :action => "sponsorship" %></li>
-		<li><%= link_to "Login", :action => "login" %></li>
-    </ul>
-  </nav>
-   <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :id => "flash_#{name}", :class => "flash" %>
-  <% end %>
+
+  <% flash.each do |name, msg| %>
+  <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+    <a class="close" data-dismiss="alert">&#215;</a>
+    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+  </div>
+<% end %>
+
 	<%= yield %>
+
+  <hr></hr>
+  <div class="navbar navbar-static-bottom padding-top footer">
+    <p> Website Questions? Email <a href="mailto:rkpandey@stanford.edu" >here</a>. </p>
+    <p> Basmati Raas 2012-2013</p>
+  </div>
 </div>
 
-<div id="footer">
-	<p> Basmati Raas 2012-2013 </p>
-</footer>
 </body>
 </html>
