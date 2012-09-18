@@ -15,11 +15,12 @@ class User < ActiveRecord::Base
   		return "defaultRaas.jpg"
   	else
       self.photos.each do |p|
+        puts p.inspect
         if p.profile
           return p.filename
         end
       end
-      return self.photos.first 
+      return self.photos.first.filename
   	end
   end
 end

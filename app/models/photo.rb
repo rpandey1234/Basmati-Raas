@@ -7,7 +7,7 @@ class Photo < ActiveRecord::Base
   def upload img
 		name = img.original_filename
 		self.filename = name
-		directory = "app/assets/images/"
+		directory = "#{Rails.root.to_s}/app/assets/images/"
 	  path = File.join(directory, name)
 		File.open(path, "wb") { |f| f.write(img.read) }
 	end
