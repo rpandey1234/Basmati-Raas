@@ -29,4 +29,8 @@ class StaticController < ApplicationController
   def called_url
 
   end
+
+  def team
+    
+  end
 end

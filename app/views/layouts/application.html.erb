@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Basmati Raas</title>
-  <link rel="icon" type="image/png" href="/images/icon.png"/>
+  <!--<link rel="icon" type="image/png" href="/images/icon.png"/>-->
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -27,7 +27,10 @@
           <li><%= link_to "Members", :controller => "users" %></li>
           <li><%= link_to "Awards", :controller => "static", :action => "awards" %></li>
       		<li><%= link_to "History", :controller => "static", :action => "history" %></li>
-      		<li><%= link_to "Sponsorship", :controller => "static", :action => "sponsorship" %></li>
+          <li><%= link_to "Sponsorship", :controller => "static", :action => "sponsorship" %></li>
+          <% if session[:username] %>
+            <li><%= link_to "Our Team", :controller => "static", :action => "team" %></li>
+          <% end %>
         </ul>
         </div>
       </div>

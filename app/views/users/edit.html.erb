@@ -11,13 +11,7 @@
 	<% end %>
 
 	<h3>Current Pictures</h3>
-	<% if @photos.empty? %>
-		<p>This user has no photos</p>
-	<% else %>
-		<% @photos.each do |p| %>
-			<%= image_tag(p.filename, :size => "100x60", :alt => "Edit Entry") %>
-		<% end %>
-	<% end %>
+	<%= render :partial => "photos/all", :locals => {:photos => @photos, :user => @user} %>
 	</td>
 
 	<td>

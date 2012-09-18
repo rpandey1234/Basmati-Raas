@@ -7,6 +7,8 @@ BasmatiRaas::Application.routes.draw do
 
   get "static/sponsorship"
 
+  get "static/team"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

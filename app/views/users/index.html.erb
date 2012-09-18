@@ -3,7 +3,9 @@
 <table class="table table-striped">
 	<% @users.each do |u| %>
 	<tr>
-		<td class="small"><%= image_tag(u.img_file, :class => "member")%></td>
+		<td class="small">
+			<%= image_tag(u.img_file, :class => "member")%>
+		</td>
 		<td class="large">
 			<p>Name: <strong>
 			<% if session[:username] %>

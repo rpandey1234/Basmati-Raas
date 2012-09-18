@@ -28,11 +28,30 @@ class PhotosController < ApplicationController
 	end
 
 		# Show photo of specific id
-	def show 
-		
+	def show
+		@user = User.find(params[:user_id])
+		@photo = Photo.find(params[:id])
 	end
 
 	def destroy
+	end
+
+	def edit
+		@user = User.find(params[:user_id])
+		@photo = Photo.find(params[:id])
+	end
+
+	# PUT: update a specific photo
+	def update
+		@user = User.find_by_id(params[:user_id])
+		@photo = Photo.find(params[:id])
+		if @photo.update_attributes(params[:photo])
+			flash[:notice] = "Updated photo!"
+			redirect_to :action => :index
+		else
+			flash[:alert] = "Unable to update photo. Try again"
+			redirect_to :action => :edit
+		end
 	end
 
 end

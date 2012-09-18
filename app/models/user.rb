@@ -12,9 +12,14 @@ class User < ActiveRecord::Base
   def img_file 
   	if self.photos.empty?
   		# default image path
-  		"defaultRaas.jpg"
+  		return "defaultRaas.jpg"
   	else
-  		self.photos.first.filename
+      self.photos.each do |p|
+        if p.profile
+          return p.filename
+        end
+      end
+      return self.photos.first 
   	end
   end
 end
